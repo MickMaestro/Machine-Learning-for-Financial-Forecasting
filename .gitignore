@@ -14,3 +14,6 @@ logs/
 # Repo policy: markdown files are not tracked, except the root README.md
 *.md
 !/README.md
+
+# ONNX_UPDATE is maintained as a separate project, not tracked here
+ONNX_UPDATE/
