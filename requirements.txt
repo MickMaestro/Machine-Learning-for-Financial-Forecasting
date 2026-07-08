@@ -1,0 +1,22 @@
+# Core Dependencies
+pandas>=1.5.0
+numpy>=1.21.0
+scikit-learn>=1.1.0
+
+# Machine Learning Libraries
+xgboost>=1.6.0
+lightgbm>=3.3.0
+
+# Deep Learning (Optional - for LSTM)
+tensorflow>=2.10.0
+
+# GUI and Visualisation
+# tkinter is part of the Python standard library - do not pip install it
+matplotlib>=3.5.0
+
+# Utilities
+joblib>=1.1.0
+chardet>=5.0.0
+
+# Development Tools (Optional)
+jupyter>=1.0.0

@@ -1,0 +1,4 @@
+# Additional dependencies for the ONNX pipeline (on top of ../requirements.txt)
+skl2onnx>=1.16.0
+onnx>=1.15.0
+onnxruntime>=1.17.0

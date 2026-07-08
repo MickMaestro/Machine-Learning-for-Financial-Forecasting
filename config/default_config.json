@@ -1,0 +1,207 @@
+{
+  "metadata": {
+    "saved_at": "2025-07-27T12:00:00.000000",
+    "version": "1.0.1"
+  },
+  "config": {
+    "application": {
+      "name": "ML Financial Forecasting",
+      "version": "1.0.1",
+      "author": "Ibukunoluwa Michael Adebanjo",
+      "description": "Machine Learning for Financial Market Forecasting"
+    },
+    "data": {
+      "default_data_dir": "data",
+      "supported_formats": [
+        "csv",
+        "excel",
+        "json",
+        "parquet"
+      ],
+      "max_file_size_mb": 500,
+      "auto_backup": true,
+      "validation_rules": {
+        "min_rows": 100,
+        "required_columns": [
+          "Timestamp",
+          "Signal_Type", 
+          "Entry_Price",
+          "Profit_Loss",
+          "Gann_Zone_Width_Pips",
+          "EMA_Separation_Pips",
+          "Trading_Session",
+          "Day_Of_Week",
+          "Hour_Of_Day",
+          "Spread"
+        ],
+        "data_exporter_2_format": true,
+        "expected_feature_count": 24,
+        "max_missing_percentage": 0.05
+      }
+    },
+    "training": {
+      "default_algorithms": [
+        "Random Forest",
+        "XGBoost",
+        "LightGBM",
+        "SVM",
+        "LSTM",
+        "Ensemble"
+      ],
+      "default_algorithm": "Random Forest",
+      "training_method": "Time-Based Split",
+      "default_test_size": 0.2,
+      "default_random_state": 42,
+      "hyperparameters": {
+        "Random Forest": {
+          "n_estimators": 200,
+          "max_depth": 15,
+          "min_samples_split": 4,
+          "min_samples_leaf": 2,
+          "class_weight": "balanced",
+          "random_state": 42,
+          "n_jobs": -1
+        },
+        "XGBoost": {
+          "n_estimators": 200,
+          "max_depth": 6,
+          "learning_rate": 0.1,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "random_state": 42,
+          "eval_metric": "logloss",
+          "verbosity": 0
+        },
+        "LightGBM": {
+          "n_estimators": 200,
+          "max_depth": 6,
+          "learning_rate": 0.1,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "random_state": 42,
+          "verbose": -1,
+          "objective": "binary",
+          "metric": "binary_logloss",
+          "boosting_type": "gbdt",
+          "num_leaves": 31,
+          "min_child_samples": 20,
+          "reg_alpha": 0.0,
+          "reg_lambda": 0.0
+        },
+        "SVM": {
+          "C": 1.0,
+          "kernel": "rbf",
+          "gamma": "scale",
+          "class_weight": "balanced",
+          "random_state": 42,
+          "probability": true
+        },
+        "LSTM": {
+          "sequence_length": 10,
+          "hidden_units": 50,
+          "dropout": 0.2,
+          "epochs": 50,
+          "batch_size": 32,
+          "learning_rate": 0.001
+        },
+        "Ensemble": {
+          "base_algorithms": [
+            "Random Forest",
+            "XGBoost",
+            "LightGBM"
+          ],
+          "meta_algorithm": "Random Forest",
+          "voting": "soft",
+          "cv_folds": 5
+        }
+      }
+    },
+    "prediction": {
+      "default_confidence_threshold": 0.65,
+      "batch_size": 1000,
+      "save_predictions": true,
+      "prediction_history_limit": 10000
+    },
+    "feature_engineering": {
+      "data_exporter_2_format": true,
+      "base_features": [
+        "Gann_Zone_Width_Pips", "Gann_Zone_Slope", "Price_Distance_From_Zone_Center",
+        "Price_Distance_From_Zone_Boundary", "Active_Gann_Line_Slope", "Bars_Since_Last_Gann_Color_Change",
+        "EMA_Separation_Pips", "Median_EMA_Slope", "Low_EMA_Slope", "Price_Distance_From_Relevant_EMA",
+        "EMA_Convergence_Divergence", "Trading_Session", "Day_Of_Week", "Hour_Of_Day",
+        "Entry_Candle_Size_Pips", "Entry_Candle_Body_Ratio", "Previous_Candle_Size_Pips",
+        "Bars_Since_Relevant_EMA_Cross", "Initial_SL_Distance_Pips", "Recent_Gann_Signal_Frequency"
+      ],
+      "derived_features": [
+        "Is_Asian_Session", "Is_London_Session", "Is_NY_Session", "Is_Overlap_Session",
+        "Is_Monday", "Is_Friday", "Is_Midweek", "Is_Market_Open_Hours", "Is_Late_Night",
+        "Is_Buy_Signal", "Is_Sell_Signal", "Relative_Position_In_Zone", "EMA_Slopes_Alignment",
+        "Candle_Size_Ratio", "Is_Tight_Stop", "Is_Wide_Stop", "High_Signal_Activity", 
+        "Low_Signal_Activity", "High_Spread", "Low_Spread"
+      ],
+      "interaction_features": [
+        "Gann_EMA_Alignment", "Favorable_Time_Conditions", "Momentum_Alignment", "Fresh_Signal"
+      ],
+      "feature_selection": {
+        "method": "importance",
+        "threshold": 0.005,
+        "max_features": 44
+      },
+      "deprecated_old_format": {
+        "note": "Old format features no longer used with Data_Exporter2.0",
+        "old_ema_periods": [144],
+        "old_gann_period": 13,
+        "old_volatility_period": 14
+      }
+    },
+    "model_management": {
+      "models_dir": "models",
+      "auto_save": true,
+      "model_versioning": true,
+      "performance_tracking": true,
+      "model_comparison": true
+    },
+    "visualization": {
+      "default_plots": [
+        "Performance Metrics",
+        "Feature Importance",
+        "Threshold Analysis",
+        "Prediction History",
+        "Model Comparison"
+      ],
+      "figure_size": [
+        10,
+        6
+      ],
+      "color_scheme": "default",
+      "save_plots": true,
+      "plot_format": "png",
+      "plot_dpi": 300
+    },
+    "logging": {
+      "log_level": "INFO",
+      "log_file": "logs/app.log",
+      "max_log_size_mb": 10,
+      "backup_count": 5,
+      "log_format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    },
+    "gui": {
+      "theme": "clam",
+      "window_size": [
+        1000,
+        700
+      ],
+      "font_family": "Arial",
+      "font_size": 10,
+      "auto_refresh": true,
+      "refresh_interval": 5000
+    },
+    "performance": {
+      "max_memory_usage_gb": 8,
+      "parallel_processing": true,
+      "n_jobs": -1,
+      "cache_size_mb": 500,
+      "optimization_level": "balanced"
+    }
+  }
+}

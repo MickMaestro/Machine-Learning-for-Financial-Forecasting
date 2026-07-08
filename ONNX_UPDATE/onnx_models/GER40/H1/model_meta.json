@@ -1,0 +1,68 @@
+{
+  "algorithm": "Random Forest",
+  "symbol": "GER40",
+  "timeframe": "H1",
+  "model_file": "RandomForest_GER40_H1.onnx",
+  "input_name": "float_input",
+  "input_shape": [
+    1,
+    21
+  ],
+  "output_name": "probabilities",
+  "output_shape": [
+    1,
+    2
+  ],
+  "output_meaning": "probabilities[0][1] = P(profitable signal)",
+  "n_features": 21,
+  "feature_order": [
+    "Gann_Zone_Width_Pips",
+    "Gann_Zone_Slope",
+    "Price_Distance_From_Zone_Center",
+    "Price_Distance_From_Zone_Boundary",
+    "Active_Gann_Line_Slope",
+    "Bars_Since_Last_Gann_Color_Change",
+    "EMA_Separation_Pips",
+    "Median_EMA_Slope",
+    "Low_EMA_Slope",
+    "Price_Distance_From_Relevant_EMA",
+    "EMA_Convergence_Divergence",
+    "Trading_Session",
+    "Day_Of_Week",
+    "Hour_Of_Day",
+    "Entry_Candle_Size_Pips",
+    "Entry_Candle_Body_Ratio",
+    "Previous_Candle_Size_Pips",
+    "Bars_Since_Relevant_EMA_Cross",
+    "Initial_SL_Distance_Pips",
+    "Recent_Gann_Signal_Frequency",
+    "Signal_Type"
+  ],
+  "feature_order_note": "EA features[] slots 0..19 then slot 21 (Signal_Type); Spread (20) unused",
+  "recommended_threshold": 0.5,
+  "metrics_at_recommended_threshold": {
+    "threshold": 0.5,
+    "accuracy": 0.9972,
+    "precision": 1.0,
+    "recall": 0.875,
+    "f1_score": 0.9333,
+    "roc_auc": 0.9989,
+    "signals_retained": 0.0193
+  },
+  "metrics_at_0.5": {
+    "threshold": 0.5,
+    "accuracy": 0.9972,
+    "precision": 1.0,
+    "recall": 0.875,
+    "f1_score": 0.9333,
+    "roc_auc": 0.9989,
+    "signals_retained": 0.0193
+  },
+  "parity_max_abs_diff": 8.738746026804023e-08,
+  "train_samples": 1446,
+  "test_samples": 362,
+  "training_csv": "GER40test_H1_signal_data.csv",
+  "trained_at": "2026-07-08T00:02:20",
+  "label_definition": "Signal_Quality = 1 if Profit_Loss > 0 (price points)",
+  "session_encoding": "1=Asian/off-hours, 2=London(8-12h), 3=NY(16-21h), 4=Overlap(13-15h)"
+}

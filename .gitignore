@@ -1,0 +1,16 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Local tooling / editor state
+.claude/
+.vscode/
+
+# Runtime logs
+logs/
+
+# Repo policy: markdown files are not tracked, except the root README.md
+*.md
+!/README.md
