@@ -17,3 +17,10 @@ logs/
 
 # ONNX_UPDATE is maintained as a separate project, not tracked here
 ONNX_UPDATE/
+
+# Not published: course material, pptx duplicate of docs/presentation.pdf,
+# and the dissertation until its layout is cleaned up (remove the line below
+# and "git add" it under docs/ when ready)
+2024-CE901-MSc dissertation grading guidelines.pdf
+*.pptx
+Machine Learning for Financial Forecasting-2404237.pdf
