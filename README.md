@@ -1,5 +1,18 @@
 # Machine Learning Financial Forecasting System
 
+![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python&logoColor=white)
+![MQL5](https://img.shields.io/badge/MQL5-MetaTrader%205-0A6EBD?logo=metatrader5&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%E2%89%A51.1-F7931E?logo=scikitlearn&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-%E2%89%A51.6-189FDD)
+![LightGBM](https://img.shields.io/badge/LightGBM-%E2%89%A53.3-9ACD32)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-%E2%89%A52.10-FF6F00?logo=tensorflow&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-%E2%89%A51.5-150458?logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-%E2%89%A51.21-013243?logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-%E2%89%A53.5-11557C)
+![Tkinter](https://img.shields.io/badge/GUI-Tkinter-informational)
+![License](https://img.shields.io/badge/License-MIT-green)
+![The5ers](https://img.shields.io/badge/The5ers%20High%20Stakes-Funded-gold)
+
 This code repository is a comprehensive automated trading system that integrates Python-based machine learning with MetaTrader 5 for enhanced financial market signal prediction and real-time trading execution.
 
 > **🏆 Real-world result:** this project was later used to fully pass **The5ers $5K High Stakes** prop firm challenge — both evaluation phases — earning a funded account in August 2025. See [Prop Firm Challenge: The5ers High Stakes](#prop-firm-challenge-the5ers-high-stakes) for the certificate and account screenshots.
@@ -33,8 +46,8 @@ After the dissertation, the trading system developed in this project was taken o
 | **Profit achieved** | **+$414.18** | **+$381.19** |
 | Final balance | $5,414.18 | $5,381.19 |
 | Trading period | 10 Jul – 29 Jul 2025 | 30 Jul – 8 Aug 2025 |
-| Profitable days (min 3) | 3 / 3 ✅ | 3 / 3 ✅ |
-| Max daily loss (5%) / max loss (10%) | Never breached ✅ | Never breached ✅ |
+| Profitable days (min 3) | 3 / 3 | 3 / 3 |
+| Max daily loss (5%) / max loss (10%) | Never breached | Never breached |
 | Instruments traded | US30, JPN225, NAS100, DAX40, SP500 | US30, JPN225, NAS100, DAX40, SP500 |
 
 ### Funded Certificate
