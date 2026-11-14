@@ -2,6 +2,8 @@
 
 This code repository is a comprehensive automated trading system that integrates Python-based machine learning with MetaTrader 5 for enhanced financial market signal prediction and real-time trading execution.
 
+> **🏆 Real-world result:** this project was later used to fully pass **The5ers $5K High Stakes** prop firm challenge — both evaluation phases — earning a funded account in August 2025. See [Prop Firm Challenge: The5ers High Stakes](#prop-firm-challenge-the5ers-high-stakes) for the certificate and account screenshots.
+
 ## System Overview
 
 This dissertation-level project presents a complete machine learning pipeline for financial trading that combines advanced technical analysis with artificial intelligence to improve trading signal accuracy. The system bridges the gap between Python-based machine learning research and practical trading implementation in MetaTrader 5.
@@ -19,6 +21,35 @@ The system employs a three-tier architecture:
 The primary innovation lies in the seamless integration of complex Python ML models into real-time MQL5 trading systems through linear approximation and feature importance extraction, enabling sophisticated AI-driven trading decisions within MetaTrader 5's execution environment.
 
 The deployed header is an *approximation*: a linear regression is fitted from the raw values of the top model features to the trained model's predicted probabilities, and the fit's fidelity (R² against the true model output) is embedded in every generated header so the quality of the simplification is always visible.
+
+## Prop Firm Challenge: The5ers High Stakes
+
+After the dissertation, the trading system developed in this project was taken out of the backtester and used on a live-market prop firm evaluation: **The5ers $5K High Stakes** challenge (MetaTrader). The challenge was passed in full — Phase 1 and Phase 2 — and the account was officially funded on **8 August 2025**.
+
+| | Phase 1 | Phase 2 |
+|---|---|---|
+| Account size | $5,000 | $5,000 |
+| Profit target | $400 (8%) | $250 (5%) |
+| **Profit achieved** | **+$414.18** | **+$381.19** |
+| Final balance | $5,414.18 | $5,381.19 |
+| Trading period | 10 Jul – 29 Jul 2025 | 30 Jul – 8 Aug 2025 |
+| Profitable days (min 3) | 3 / 3 ✅ | 3 / 3 ✅ |
+| Max daily loss (5%) / max loss (10%) | Never breached ✅ | Never breached ✅ |
+| Instruments traded | US30, JPN225, NAS100, DAX40, SP500 | US30, JPN225, NAS100, DAX40, SP500 |
+
+### Funded Certificate
+
+<p align="center">
+  <img src="Results/The5ers_High_Stakes/funded_certificate.jpg" alt="The5ers Funded Certificate, 08/08/25" width="450">
+</p>
+
+### Phase 1 — Passed
+
+![The5ers High Stakes Phase 1 passed: +$414.18 against a $400 target](Results/The5ers_High_Stakes/phase1_passed.png)
+
+### Phase 2 — Passed
+
+![The5ers High Stakes Phase 2 passed: +$381.19 against a $250 target](Results/The5ers_High_Stakes/phase2_passed.png)
 
 ## Technical Specifications
 
@@ -890,6 +921,8 @@ A full review of the pipeline fixed the following defects (relevant when compari
 This machine learning financial forecasting system represents a comprehensive solution for automated trading strategy development. By combining sophisticated Python-based machine learning with practical MetaTrader 5 integration, it bridges the gap between academic research and real-world trading applications.
 
 The system's modular architecture, extensive feature engineering, and robust validation framework provide a solid foundation for financial machine learning research and practical trading system development. The automated conversion of complex ML models to MQL5 headers enables sophisticated AI-driven trading decisions within standard retail trading platforms.
+
+Beyond the academic evaluation, the system has been proven in live market conditions: it was used to pass both phases of The5ers $5K High Stakes prop firm challenge and secure a funded account (see [Prop Firm Challenge: The5ers High Stakes](#prop-firm-challenge-the5ers-high-stakes)).
 
 ## Technical Support and Documentation
 
